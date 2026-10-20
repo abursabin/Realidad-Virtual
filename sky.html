@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sky</title>
+    <meta name="description" content="Sky">
+
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        /* Botones fijos sobre la escena */
+        #control {
+            position: fixed;
+            top: 10%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background-color: rgba(38, 50, 56, 0.9);
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #546e7a;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="control">   
+        <a href="./index.html">
+            <button>Volver</button>
+        </a>
+    </div>
+    
+    <a-scene>
+        <a-assets>
+            <img id="planeta" src="./recursos/planeta.png">
+            <img id="galaxia" src="./recursos/panoramica.jpg">
+        </a-assets>
+
+        <a-sky id="imagen-panoramica" radius="10" src="#galaxia"></a-sky>
+
+         <a-sphere position="-8 1 -5" rotation="0 30 45" scale="3 3 3" src="#planeta">
+             <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite" to="-8 1 -3"></a-animation>
+             <a-animation scale="rotation" begin="mouseenter" dur="300" to="360 45 45"></a-animation>
+         </a-sphere>    
+
+         <a-camera rotation="0 90 0">
+           <a-cursor color="#ccff33"></a-cursor>
+        </a-camera>
+    </a-scene>
+</body>
+</html>

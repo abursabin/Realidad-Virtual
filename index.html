@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PEC3 - Realidad virtual 360º</title>
+
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+    <style>
+        body {
+            background: #1d2528;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #controles {
+           position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            display: flex;
+            gap: 80px;
+            align-items: center;
+        }
+
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 6px;
+            background: #3e525c;
+            color: white;
+            cursor: pointer;
+            font-size: 25px;
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background: #6b99af;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="controles">
+        <a href="./sky.html">
+            <button>Imagen 360º</button>
+        </a>
+        <a href="video.html">
+            <button>Video 360º</button>
+        </a>
+    </div>
+
+     
+</body>
+</html>
